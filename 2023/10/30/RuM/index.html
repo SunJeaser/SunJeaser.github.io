@@ -19,24 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sunjeaser.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Mind Palace">
-<meta property="og:url" content="http://sunjeaser.com/archives/2023/index.html">
+    <meta name="description" content="IntroductionMethodsVienna ab initio simulation package (VASP) Ion-electron interaction – Projector augmented wave (PAW) methods Electron exchange-correlation – fuctional of Perdew，Burke，and Ernzerhof(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RuM">
+<meta property="og:url" content="http://sunjeaser.com/2023/10/30/RuM/index.html">
 <meta property="og:site_name" content="Mind Palace">
+<meta property="og:description" content="IntroductionMethodsVienna ab initio simulation package (VASP) Ion-electron interaction – Projector augmented wave (PAW) methods Electron exchange-correlation – fuctional of Perdew，Burke，and Ernzerhof(">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-30T08:40:03.000Z">
+<meta property="article:modified_time" content="2023-10-30T08:59:43.358Z">
 <meta property="article:author" content="JeaserSun">
 <meta property="article:tag" content="VASP,MS,Python,Pytorch">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://sunjeaser.com/archives/2023/">
+<link rel="canonical" href="http://sunjeaser.com/2023/10/30/RuM/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2023/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://sunjeaser.com/2023/10/30/RuM/","path":"2023/10/30/RuM/","title":"RuM"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | Mind Palace</title>
+<title>RuM | Mind Palace</title>
   
 
 
@@ -66,7 +70,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Mind Palace</h1>
+      <p class="site-title">Mind Palace</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">学习心得</p>
@@ -89,7 +93,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -102,6 +106,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vienna-ab-initio-simulation-package-VASP"><span class="nav-number">2.1.</span> <span class="nav-text">Vienna ab initio simulation package (VASP)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results-and-Discussion"><span class="nav-number">3.</span> <span class="nav-text">Results and Discussion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -135,109 +140,88 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunjeaser.com/2023/10/30/RuM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JeaserSun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mind Palace">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="RuM | Mind Palace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          RuM
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-10-30 16:40:03 / 修改时间：16:59:43" itemprop="dateCreated datePublished" datetime="2023-10-30T16:40:03+08:00">2023-10-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="Vienna-ab-initio-simulation-package-VASP"><a href="#Vienna-ab-initio-simulation-package-VASP" class="headerlink" title="Vienna ab initio simulation package (VASP)"></a>Vienna ab initio simulation package (VASP)</h2><p> Ion-electron interaction – Projector augmented wave (PAW) methods<br> Electron exchange-correlation – fuctional of Perdew，Burke，and Ernzerhof(PBE) of generalized gradient approximation (GGA)<br> ENCUT – Converagence test<br> KPOINTS – Converagence test<br> Dispersion correction hydrogen bonding interactions between water molecules – DFT-D3<br> Converagence 0.02 eV&#x2F;A in force opt<br> Converagence 0.05 eV&#x2F;A in force transition states<br> Test of mag<br> Frequency calculation –<br> criteria data – entropy of molecules (H2 H2O OH) zero point energy of H2 </p>
+<h1 id="Results-and-Discussion"><a href="#Results-and-Discussion" class="headerlink" title="Results and Discussion"></a>Results and Discussion</h1><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-30T16:40:03+08:00"
-              content="2023-10-30">
-          10-30
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/30/RuM/" itemprop="url">
-          <span itemprop="name">RuM</span>
-        </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/27/TMPs-Prediction-ideas/" rel="prev" title="TMPs Prediction ideas">
+                  <i class="fa fa-angle-left"></i> TMPs Prediction ideas
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-27T14:45:12+08:00"
-              content="2023-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/27/TMPs-Prediction-ideas/" itemprop="url">
-          <span itemprop="name">TMPs Prediction ideas</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-27T09:18:49+08:00"
-              content="2023-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/27/13-21-Version-Some-Talking-about-Jungle/" itemprop="url">
-          <span itemprop="name">Version13.21 How jungle do can win the game？</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-25T21:15:38+08:00"
-              content="2023-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/25/hello-world/" itemprop="url">
-          <span itemprop="name">Solid and intersurfaces Some ideas about methods by VASP & MS.</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
