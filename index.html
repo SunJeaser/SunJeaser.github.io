@@ -173,9 +173,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-30 16:40:03 / 修改时间：17:01:07" itemprop="dateCreated datePublished" datetime="2023-10-30T16:40:03+08:00">2023-10-30</time>
+      <time title="创建时间：2023-10-30 16:40:03" itemprop="dateCreated datePublished" datetime="2023-10-30T16:40:03+08:00">2023-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-01 15:19:35" itemprop="dateModified" datetime="2023-11-01T15:19:35+08:00">2023-11-01</time>
     </span>
 
   
@@ -188,10 +194,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="Vienna-ab-initio-simulation-package-VASP"><a href="#Vienna-ab-initio-simulation-package-VASP" class="headerlink" title="Vienna ab initio simulation package (VASP)"></a>Vienna ab initio simulation package (VASP)</h2><p> Ion-electron interaction – Projector augmented wave (PAW) methods<br> Electron exchange-correlation – fuctional of Perdew，Burke，and Ernzerhof(PBE) of generalized gradient approximation (GGA)<br> ENCUT – Converagence test<br> KPOINTS – Converagence test<br> Dispersion correction hydrogen bonding interactions between water molecules – DFT-D3<br> Converagence 0.02 eV&#x2F;A in force opt<br> Converagence 0.05 eV&#x2F;A in force transition states<br> Test of mag </p>
-<p> Frequency calculation – zero point energy of H（adsorption） </p>
-<p> criteria data – entropy of molecules (H2 H2O OH) zero point energy of H2  </p>
-<h1 id="Results-and-Discussion"><a href="#Results-and-Discussion" class="headerlink" title="Results and Discussion"></a>Results and Discussion</h1><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="Vienna-ab-initio-simulation-package-VASP"><a href="#Vienna-ab-initio-simulation-package-VASP" class="headerlink" title="Vienna ab initio simulation package (VASP)"></a>Vienna ab initio simulation package (VASP)</h2><p> Ion-electron interaction – Projector augmented wave (PAW) methods<br> Electron exchange-correlation – fuctional of Perdew，Burke，and Ernzerhof(PBE) of generalized gradient approximation (GGA)<br> ENCUT – Converagence test<br> KPOINTS – Converagence test<br> Dispersion correction hydrogen bonding interactions between water molecules – DFT-D3<br> Converagence 0.02 eV&#x2F;A in force opt<br> Converagence 0.05 eV&#x2F;A in force transition states<br> Test of mag<br> Frequency calculation – zero point energy of H（adsorption）<br> criteria data – entropy of molecules (H2 H2O OH) zero point energy of H2  </p>
+<h2 id="Crystal-mixture"><a href="#Crystal-mixture" class="headerlink" title="Crystal mixture"></a>Crystal mixture</h2><p>将 Ni&#x2F;Co 原子 按比例随机掺杂至Ru的晶格中(MsYang script) 构建合金晶胞 用VASP进行晶格优化 ISMEAR&#x3D;1 SIGMA&#x3D;0.2 </p>
+<h2 id="Test-of-Convergence"><a href="#Test-of-Convergence" class="headerlink" title="Test of Convergence"></a>Test of Convergence</h2><p>ISMEAR 取值经验：</p>
+<ol>
+<li>对于性质计算 ISMEAR &#x3D; 0 加上合适的 SIGMA值都能获得合理的结果</li>
+<li>在进行静态计算或DOS计算，且K点数大于4，取ISMEAR &#x3D; -5</li>
+<li>当原胞够大–K点数小于4 ISMEAR &#x3D; 0 SIGMA &#x3D; 0.05</li>
+<li>对半导体和绝缘体 ISMEAR &#x3D; -5 金属体系弛豫 ISMEAR &#x3D; 1 or 2 SIGMA &#x3D; default 0.2<br>引入展宽是可以减少k需求来实现计算力等信息获得加速<br>ISMEAR&#x3D;0配以测试好的SIGMA值是一个万能的设置，不像ISMEAR&#x3D;-5、1、2那样有诸多限制。对于任何体系的研究，用ISMEAR&#x3D;0+测试过的SIGMA做结构优化、频率计算获取结构信息和热力学校正，再此ISMEAR&#x3D;0+SIGMA下做静态自洽计算获得能量，在此结构下将ISMEAR改为-5做静态非自洽增加k点得到DOS</li>
+</ol>
+<h2 id="Test-of-mag"><a href="#Test-of-mag" class="headerlink" title="Test of mag"></a>Test of mag</h2><p>通常情况下铁磁性体系如果磁矩本身也不大的不猜也就无所谓，或者无磁性的索性就关了自旋极化。但是如果是反铁磁、亚铁磁的很可能不猜磁矩会导致算出来是铁磁性的，或者落到其他的反铁磁的状态上</p>
+<h2 id="Lattice-Relax"><a href="#Lattice-Relax" class="headerlink" title="Lattice Relax"></a>Lattice Relax</h2><p>RuCo HNRs a&#x3D;b&#x3D;10.82320 A c&#x3D;17.12640 A α&#x3D;β&#x3D;90° γ&#x3D;120°<br>After relax a&#x3D;10.71933 A b&#x3D;10.72561 A c&#x3D;16.94862 A α&#x3D;89.8450° β&#x3D;90.1081° γ&#x3D;120.0000°<br>偏移量小于 1%</p>
+<h2 id="Cleave-Surfaces"><a href="#Cleave-Surfaces" class="headerlink" title="Cleave Surfaces"></a>Cleave Surfaces</h2><p>切面时，要注意不能改变其原子摩尔比<br>对于HER反应，要注意覆盖率问题 最佳顶层原子数可以是8 这样覆盖率可以从0.125-1.000区间</p>
+<h2 id="Converegence-test"><a href="#Converegence-test" class="headerlink" title="Converegence test"></a>Converegence test</h2><h1 id="Results-and-Discussion"><a href="#Results-and-Discussion" class="headerlink" title="Results and Discussion"></a>Results and Discussion</h1><h2 id="H-adsorption-energy"><a href="#H-adsorption-energy" class="headerlink" title="H adsorption energy"></a>H adsorption energy</h2><p>HBE</p>
+<h2 id="Water-dissociation-barrier"><a href="#Water-dissociation-barrier" class="headerlink" title="Water dissociation barrier"></a>Water dissociation barrier</h2><p>TS- CI-NEB<br>OH* H* alkaline and neutral </p>
+<h2 id="d-band-center"><a href="#d-band-center" class="headerlink" title="d-band center"></a>d-band center</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
       
     </div>
 
