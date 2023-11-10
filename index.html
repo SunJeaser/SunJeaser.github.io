@@ -181,7 +181,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-02 10:21:37" itemprop="dateModified" datetime="2023-11-02T10:21:37+08:00">2023-11-02</time>
+      <time title="修改时间：2023-11-10 14:02:34" itemprop="dateModified" datetime="2023-11-10T14:02:34+08:00">2023-11-10</time>
     </span>
 
   
@@ -201,13 +201,13 @@
 <li>对于性质计算 ISMEAR &#x3D; 0 加上合适的 SIGMA值都能获得合理的结果</li>
 <li>在进行静态计算或DOS计算，且K点数大于4，取ISMEAR &#x3D; -5</li>
 <li>当原胞够大–K点数小于4 ISMEAR &#x3D; 0 SIGMA &#x3D; 0.05</li>
-<li>对半导体和绝缘体 ISMEAR &#x3D; -5 金属体系弛豫 ISMEAR &#x3D; 1 or 2 SIGMA &#x3D; default 0.2<br>引入展宽是可以减少k需求来实现计算力等信息获得加速<br>ISMEAR&#x3D;0配以测试好的SIGMA值是一个万能的设置，不像ISMEAR&#x3D;-5、1、2那样有诸多限制。对于任何体系的研究，用ISMEAR&#x3D;0+测试过的SIGMA做结构优化、频率计算获取结构信息和热力学校正，再此ISMEAR&#x3D;0+SIGMA下做静态自洽计算获得能量，在此结构下将ISMEAR改为-5做静态非自洽增加k点得到DOS</li>
+<li>对半导体和绝缘体 ISMEAR &#x3D; -5 金属体系弛豫 ISMEAR &#x3D; 1 or 2 SIGMA &#x3D; default 0.2<br>引入展宽是可以减少k需求来实现计算力等信息获得加速<br>ISMEAR&#x3D;0配以测试好的SIGMA值是一个万能的设置，不像ISMEAR&#x3D;-5、1、2那样有诸多限制。对于任何体系的研究，用ISMEAR&#x3D;0+测试过的SIGMA做结构优化、频率计算获取结构信息和热力学校正，再此ISMEAR&#x3D;0+SIGMA下做静态自洽计算获得能量，在此结构下将ISMEAR改为-5做静态非自洽增加k点得到DOS<br>对Bulk做ENCUT 收敛性测试(绝对能量) 发现500 误差大 但时间短  600误差小 但时间长 综合考虑 先用500做为初ENCUT 在后面切面后建模时再从新测试相对能量的ENCUT为优</li>
 </ol>
 <h2 id="Test-of-mag"><a href="#Test-of-mag" class="headerlink" title="Test of mag"></a>Test of mag</h2><p>通常情况下铁磁性体系如果磁矩本身也不大的不猜也就无所谓，或者无磁性的索性就关了自旋极化。但是如果是反铁磁、亚铁磁的很可能不猜磁矩会导致算出来是铁磁性的，或者落到其他的反铁磁的状态上</p>
 <h2 id="Lattice-Relax"><a href="#Lattice-Relax" class="headerlink" title="Lattice Relax"></a>Lattice Relax</h2><p>RuCo HNRs a&#x3D;b&#x3D;10.82320  c&#x3D;17.12640  α&#x3D;β&#x3D;90° γ&#x3D;120°<br>After relax a&#x3D;10.71933  b&#x3D;10.72561  c&#x3D;16.94862  α&#x3D;89.8450° β&#x3D;90.1081° γ&#x3D;120.0000°<br>偏移量小于 1%<br>RuCo SHRs a&#x3D;b&#x3D;10.82320  c&#x3D;17.12640  α&#x3D;β&#x3D;90° γ&#x3D;120°<br>After relax a&#x3D;10.38091 b&#x3D;10.38679 c&#x3D;16.72147 α&#x3D;90.0867 β&#x3D;89.7776 γ&#x3D;119.9242</p>
 <p>RuNi HNRs a&#x3D;b&#x3D;10.82320  c&#x3D;17.12640  α&#x3D;β&#x3D;90° γ&#x3D;120°<br>After relax a&#x3D;10.72015 b&#x3D;10.71677 c&#x3D;16.95390 α&#x3D;89.8361 β&#x3D;90.1232 γ&#x3D;119.9416</p>
 <p>RuNi SNRs a&#x3D;b&#x3D;10.82320  c&#x3D;17.12640  α&#x3D;β&#x3D;90° γ&#x3D;120°<br>After Relax a&#x3D;10.42364 b&#x3D;10.37144 c&#x3D;17.04135 α&#x3D;89.8366 β&#x3D;90.1476 γ&#x3D;120.2374</p>
-<h2 id="Cleave-Surfaces"><a href="#Cleave-Surfaces" class="headerlink" title="Cleave Surfaces"></a>Cleave Surfaces</h2><p>切面时，要注意不能改变其原子摩尔比<br>对于HER反应，要注意覆盖率问题 最佳顶层原子数可以是8 这样覆盖率可以从0.125-1.000区间</p>
+<h2 id="Cleave-Surfaces"><a href="#Cleave-Surfaces" class="headerlink" title="Cleave Surfaces"></a>Cleave Surfaces</h2><p>切面时，要注意不能改变其原子摩尔比<br>对于HER反应，要注意覆盖率问题 最佳顶层原子数可以是8 这样覆盖率可以从0.125-1.000区间<br>磁矩初猜：Co: 3 1 测试能量<br>偶极矫正： LDIPOL&#x3D;.TRUE  IDIPOL &#x3D; 1-3  对于不带电体系 不考虑也行（是吗？） 建议自己尝试计算加与不加的计算结果</p>
 <h2 id="Converegence-test"><a href="#Converegence-test" class="headerlink" title="Converegence test"></a>Converegence test</h2><h1 id="Results-and-Discussion"><a href="#Results-and-Discussion" class="headerlink" title="Results and Discussion"></a>Results and Discussion</h1><h2 id="H-adsorption-energy"><a href="#H-adsorption-energy" class="headerlink" title="H adsorption energy"></a>H adsorption energy</h2><p>HBE</p>
 <h2 id="Water-dissociation-barrier"><a href="#Water-dissociation-barrier" class="headerlink" title="Water dissociation barrier"></a>Water dissociation barrier</h2><p>TS- CI-NEB<br>OH* H* alkaline and neutral </p>
 <h2 id="d-band-center"><a href="#d-band-center" class="headerlink" title="d-band center"></a>d-band center</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
@@ -272,7 +272,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-30 16:39:37" itemprop="dateModified" datetime="2023-10-30T16:39:37+08:00">2023-10-30</time>
+      <time title="修改时间：2023-11-10 15:13:45" itemprop="dateModified" datetime="2023-11-10T15:13:45+08:00">2023-11-10</time>
     </span>
 
   
@@ -293,7 +293,14 @@
 <li>Ni12P5 &lt; Ni2P &lt; Ni5P4 But Rappe find Ni3P &gt; Ni2P P占比的趋势具有不确定性</li>
 <li>Mo &lt; Mo3P &lt; MoP<br>小结: P占比含量越高，对HER性能越好(对于Co、Ni、Mo)<br>而Liu、Schipper、等人又发现:<br> 1, Fe3P &gt; Fe2P &gt; FeP<br> 2, Ru2P &gt; RuP &gt; RuP2 石墨烯负载<br>在Liu对RuP的研究中发现，H原子更趋向于吸附到金属原子Ru上面去，故含Ru量高的具有较高的析氢反应性能。而其石墨烯基底通过掺杂P也能够提高HER性能。理论计算了G 实验合成了三种磷化物<br>在Schipper的研究中发现: H原子更趋向于吸附至Fe原子上，如Fe-Fe桥 3Fe空位 微分自由能对性能的阐述比以往研究中的自由能描述更具可靠性<br>HER的最优P占比的问题仍未解决<br>以往的研究认为过渡金属原子作为反应的中心，带负电荷的弱碱性P原子有助于捕获质子，促进氢气解吸。</li>
 </ol>
-<h3 id="Os的磷化物"><a href="#Os的磷化物" class="headerlink" title="Os的磷化物"></a>Os的磷化物</h3><h3 id="Ta的磷化物"><a href="#Ta的磷化物" class="headerlink" title="Ta的磷化物"></a>Ta的磷化物</h3><h3 id="Hf的磷化物"><a href="#Hf的磷化物" class="headerlink" title="Hf的磷化物"></a>Hf的磷化物</h3><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>由于无实验参考 该体系可作为未完成的第三体系处理。</p>
+<h3 id="Os的磷化物"><a href="#Os的磷化物" class="headerlink" title="Os的磷化物"></a>Os的磷化物</h3><p>选取了P4Os作为P-rich的磷化物，通过BFDH和表面能的计算，确定了最稳定面（0 1 0）并作了2X2扩胞。ML&#x3D;1&#x2F;16	<br>吸附位点：<br>P-Os Bridge site : ΔG&#x3D; -0.466 eV<br>P Top site ：ΔG&#x3D; -0.235 eV<br>P-P Hollow&#x2F;Bridge site : 优化时偏移至Top位<br>Os Top site ：计算中</p>
+<h3 id="Ta的磷化物"><a href="#Ta的磷化物" class="headerlink" title="Ta的磷化物"></a>Ta的磷化物</h3><p>选取P-rich的TaP3作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 0 1)并2X2超胞。ML&#x3D;1&#x2F;16<br>吸附位点：<br>P Top site 1<br>桥位偏移P Top site 2<br>Ta Top site         ∆G&#x3D; 0.542 eV<br>在计算单点时，没考虑H自旋和slab自旋 计算H+slab时 固定了4层原子计算声子 和差分电荷密度 计算Slab时，通过VASPKIT给的2D K-Path 计算了能带和DOS</p>
+<h3 id="Hf的磷化物"><a href="#Hf的磷化物" class="headerlink" title="Hf的磷化物"></a>Hf的磷化物</h3><p>选取P-rich的HfP2作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 1 0） 作2X2超胞。 ML&#x3D;1&#x2F;16<br>P4 HolloW 偏移到 P-P Bridge site  ∆G&#x3D; 0.016 eV<br>P TOP site ∆G&#x3D; 0.051 eV<br>P-P Bridge site  ∆G&#x3D; 0.473 eV<br>P-P Bridge 2 site 偏移至 P Topsite ∆G&#x3D; -0.256 eV<br>能量不太对 建议加上H自旋重新算 DFT+U?</p>
+<p>##电子性质分析<br>###DOS和PDOS</p>
+<p>###差分电荷密度</p>
+<p>###能带分析</p>
+<p>##过渡态分析 of 基元反应 (Volmer Heyrovsky Tafel)<br>酸性碱性HER都要考虑</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>由于无实验参考 该体系可作为未完成的第三体系处理。</p>
 
       
     </div>
@@ -425,7 +432,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-30 17:09:13" itemprop="dateModified" datetime="2023-10-30T17:09:13+08:00">2023-10-30</time>
+      <time title="修改时间：2023-11-07 10:50:25" itemprop="dateModified" datetime="2023-11-07T10:50:25+08:00">2023-11-07</time>
     </span>
 
   
@@ -438,7 +445,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><h3 id="构建晶胞-晶胞优化"><a href="#构建晶胞-晶胞优化" class="headerlink" title="构建晶胞&amp;晶胞优化"></a>构建晶胞&amp;晶胞优化</h3><p>  晶体模型可从Materials Project网站直接下载导入。<br>  初次导入时，需要注意晶格参数和空间群是否与网站上的一致（以防导入时结构出现错误），若不同则改成一致。<br>  确认无误后，对晶胞进行晶格的弛豫（ISIF &#x3D; 3），设置参数时注意:（以VASP为例）</p>
+          <h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><h3 id="在做任何研究前，需要明确自己在研究什么？-为什么要做这些研究？"><a href="#在做任何研究前，需要明确自己在研究什么？-为什么要做这些研究？" class="headerlink" title="在做任何研究前，需要明确自己在研究什么？ 为什么要做这些研究？"></a>在做任何研究前，需要明确自己在研究什么？ 为什么要做这些研究？</h3><p>在探究HER反应电催化剂的性能时，需要探究反应的热力学、动力学、选择性等等。</p>
+<h3 id="构建晶胞-晶胞优化"><a href="#构建晶胞-晶胞优化" class="headerlink" title="构建晶胞&amp;晶胞优化"></a>构建晶胞&amp;晶胞优化</h3><p> 晶体模型可从Materials Project网站直接下载导入。<br>  初次导入时，需要注意晶格参数和空间群是否与网站上的一致（以防导入时结构出现错误），若不同则改成一致。<br>  确认无误后，对晶胞进行晶格的弛豫（ISIF &#x3D; 3），设置参数时注意:（以VASP为例）</p>
 <ol>
 <li>检查POSCAR 建议以后的计算中统一用分数坐标；</li>
 <li>创建POTCAR 此步可用VASPKIT一键创建，若自己手动创建，注意元素顺序要与POSCAR中的一致；  </li>
@@ -463,7 +471,7 @@
 <h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><h3 id="添加吸附质（以H原子为例）"><a href="#添加吸附质（以H原子为例）" class="headerlink" title="添加吸附质（以H原子为例）"></a>添加吸附质（以H原子为例）</h3><p>  在添加吸附质之前，需要明确吸附质的吸附位点，常见的吸附位点有：Top site 、Bridge site 、Hollow site.<br>  而找到最佳吸附位点的方法只能通过枚举法，进行不同吸附位点的构建，然后对体系进行弛豫、静态计算，通过吸附能公式计算出ΔE的值，并进行自由能矫正（需要计算频率），计算出零点能ZPE，通过ΔG&#x3D;ΔE+ΔZPE-TΔS 计算出不同吸附位点的吸附自由能，根据体系需要进行最佳吸附位点的取舍。<br>  比如：在析氢反应中，ΔG的值越接近于0，其热力学趋势越好，则为理想吸附位点。<br>  这里就出现了一些疑问了：</p>
 <ol>
 <li>为什么有些文献的催化剂计算出来的ΔG比现在最好最贵的催化剂还好，但工业上还是没有见到这些催化剂的实际应用。<br>热力学趋势好并不代表其催化性能好于其他热力学趋势较差的催化剂，还需要考虑反应动力学等问题，在有些理论研究中，一些催化剂的热力学趋势要比Pt&#x2F;C都好，但还是不能投入生产使用，原因为在实际生产中，综合考虑的因素很多，需要经过实验对其各种性能进行评估，才可判断其实际性能的高低与否，这不是理论计算需要考虑的范围了。<br>  目前，理论计算仅能从热力学和动力学角度去预测验证催化剂的催化性能，以起到对实验的指导作用，并不能高于实验。</li>
-<li>在建好吸附模型后，进行弛豫时，发现原子偏离了我理想的吸附点位，如：H原子从Top位弛豫到Hollow位，这时还能将其当成Top位点进行计算吗？<br>  不能，要根据实际优化后的结构进行点位的判断，如果没法优化到Top位点，那就是Top位点是热力学劣势处，直接不予考虑。	<br>  周期性体系计算时要考虑偶极矫正？<br>  在优化有单电子体系时，自旋优化的设置方法:</li>
+<li>在建好吸附模型后，进行弛豫时，发现原子偏离了我理想的吸附点位，如：H原子从Top位弛豫到Hollow位，这时还能将其当成Top位点进行计算吗？<br>  不能，要根据实际优化后的结构进行点位的判断，若无法优化至想要的位点，那么可以用过渡态搜寻的方法得到理想位点的结构。<br>  周期性体系计算时要考虑偶极矫正？需要 在VASP中打开LDPOL<br>  在优化有单电子体系时，自旋优化的设置方法:</li>
 <li>在第一次弛豫时，可以不加自旋进行优化</li>
 <li>之后再进行一次加自旋的弛豫</li>
 <li>最后加上自旋进行静态计算。<br>  注意: 在进行自由能矫正时，H吸附在金属原子上和非金属原子上的频率是不同的，零点能有差异。<br> 疑惑: 既然吸附能越低越容易吸附，那其热力学趋势应该是最大的，为什么不取最低的当作实际的吸附能呢？<br> 解答：私认为，在实际生产中，氢气覆盖在催化剂表面上时，各种位点都有吸附，但是在经历最后的脱附步骤时，往往是G接近于0的位点脱附出来的氢气最多。故，要选择吸附位点G–0作为评判标准。</li>
@@ -476,7 +484,8 @@
 <li>频率计算的软件建议统一，故要选择能够满足体系计算需求的软件，如:CASTEP在计算周期性体系比较方便，而Dmol3、shermo计算非周期性体系较精准，如若我的需求中两者都有，最好选择其他的软件。</li>
 <li>零点振动能即零点能     2.760595E-1&#x3D; ZPE of H2<br> 这是初步探究出的个人认为需要注意的点，在之后的研究中会根据遇到的问题进行补充。</li>
 </ol>
-<h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><h3 id="优化技巧"><a href="#优化技巧" class="headerlink" title="优化技巧"></a>优化技巧</h3><p> 先粗算 固定slab 用Gamma点进行粗算 确定初始结构再进行细算优化</p>
+
       
     </div>
 
