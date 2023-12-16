@@ -27,7 +27,7 @@
 <meta property="og:description" content="TMPs的发展历程1974年–TMPs初次被用作HER的多相催化剂1993年–展开了NiP的研究1998年–探究了Ni-P电极的HER反应活性2013年–探究了FeP纳米片2015年–对FeP进行Co的合金化掺杂，Fe0.5Co0.5P2018年--Ni2P@FePOx 核壳结构2020年--IrP2@PC 核壳结构2022年–研究TMPs的组分依赖性Tafel斜率到底对应理论计算中的哪个部分？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-27T06:45:12.000Z">
-<meta property="article:modified_time" content="2023-11-18T02:12:38.025Z">
+<meta property="article:modified_time" content="2023-12-13T02:27:21.421Z">
 <meta property="article:author" content="JeaserSun">
 <meta property="article:tag" content="VASP,MS,Python,Pytorch">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TMPs%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">TMPs的发展历程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E7%A7%91%E5%AD%A6%E6%80%A7%E9%97%AE%E9%A2%98-%E8%A1%8C%E6%96%87%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解决的科学性问题&amp;行文思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E6%B8%A1%E9%87%91%E5%B1%9E%E7%A3%B7%E5%8C%96%E7%89%A9%E7%9A%84%E9%80%89%E5%8F%96"><span class="nav-number">3.</span> <span class="nav-text">过渡金属磷化物的选取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Os%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9"><span class="nav-number">3.0.1.</span> <span class="nav-text">Os的磷化物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ta%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9"><span class="nav-number">3.0.2.</span> <span class="nav-text">Ta的磷化物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TaP"><span class="nav-number">3.0.3.</span> <span class="nav-text">TaP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hf%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9"><span class="nav-number">3.0.4.</span> <span class="nav-text">Hf的磷化物</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11%E6%9C%8813%E6%97%A5-%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">11月13日 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11%E6%9C%8814%E6%97%A5-15%E6%97%A5-%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">11月14日&#x2F;15日 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11%E6%9C%8817%E6%97%A5"><span class="nav-number">7.</span> <span class="nav-text">11月17日</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11%E6%9C%8818%E6%97%A5"><span class="nav-number">8.</span> <span class="nav-text">11月18日</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TMPs%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">TMPs的发展历程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E7%A7%91%E5%AD%A6%E6%80%A7%E9%97%AE%E9%A2%98-%E8%A1%8C%E6%96%87%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解决的科学性问题&amp;行文思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E6%B8%A1%E9%87%91%E5%B1%9E%E7%A3%B7%E5%8C%96%E7%89%A9%E7%9A%84%E9%80%89%E5%8F%96"><span class="nav-number">3.</span> <span class="nav-text">过渡金属磷化物的选取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Os%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9"><span class="nav-number">3.0.1.</span> <span class="nav-text">Os的磷化物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ta%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9-TaP3"><span class="nav-number">3.0.2.</span> <span class="nav-text">Ta的磷化物 TaP3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TaP"><span class="nav-number">3.0.3.</span> <span class="nav-text">TaP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ta2P"><span class="nav-number">3.0.4.</span> <span class="nav-text">Ta2P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hf%E7%9A%84%E7%A3%B7%E5%8C%96%E7%89%A9"><span class="nav-number">3.0.5.</span> <span class="nav-text">Hf的磷化物</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E6%80%A7%E8%B4%A8%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">电子性质分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOS%E5%92%8CPDOS"><span class="nav-number">4.1.</span> <span class="nav-text">DOS和PDOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6"><span class="nav-number">4.2.</span> <span class="nav-text">差分电荷密度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E5%B8%A6%E5%88%86%E6%9E%90"><span class="nav-number">4.3.</span> <span class="nav-text">能带分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%B8%A1%E6%80%81%E5%88%86%E6%9E%90-of-%E5%9F%BA%E5%85%83%E5%8F%8D%E5%BA%94-Volmer-Heyrovsky-Tafel"><span class="nav-number">4.4.</span> <span class="nav-text">过渡态分析 of 基元反应 (Volmer Heyrovsky Tafel)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CI-NEB%E6%8A%80%E5%B7%A7"><span class="nav-number">4.4.1.</span> <span class="nav-text">CI-NEB技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%97%8B"><span class="nav-number">4.4.2.</span> <span class="nav-text">自旋</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8813%E6%97%A5-%E6%80%BB%E7%BB%93"><span class="nav-number">5.0.1.</span> <span class="nav-text">11月13日 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8814%E6%97%A5-15%E6%97%A5-%E6%80%BB%E7%BB%93"><span class="nav-number">5.0.2.</span> <span class="nav-text">11月14日&#x2F;15日 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8817%E6%97%A5"><span class="nav-number">5.0.3.</span> <span class="nav-text">11月17日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8818%E6%97%A5"><span class="nav-number">5.0.4.</span> <span class="nav-text">11月18日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8820%E6%97%A5"><span class="nav-number">5.0.5.</span> <span class="nav-text">11月20日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8827%E6%97%A5"><span class="nav-number">5.0.6.</span> <span class="nav-text">11月27日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E6%9C%8828%E6%97%A5"><span class="nav-number">5.0.7.</span> <span class="nav-text">11月28日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E6%9C%884%E6%97%A5"><span class="nav-number">5.0.8.</span> <span class="nav-text">12月4日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E6%9C%885%E6%97%A5"><span class="nav-number">5.0.9.</span> <span class="nav-text">12月5日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E6%9C%887%E6%97%A5"><span class="nav-number">5.0.10.</span> <span class="nav-text">12月7日</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -187,7 +187,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-18 10:12:38" itemprop="dateModified" datetime="2023-11-18T10:12:38+08:00">2023-11-18</time>
+      <time title="修改时间：2023-12-13 10:27:21" itemprop="dateModified" datetime="2023-12-13T10:27:21+08:00">2023-12-13</time>
     </span>
 
   
@@ -208,15 +208,24 @@
 <li>Mo &lt; Mo3P &lt; MoP<br>小结: P占比含量越高，对HER性能越好(对于Co、Ni、Mo)<br>而Liu、Schipper、等人又发现:<br> 1, Fe3P &gt; Fe2P &gt; FeP<br> 2, Ru2P &gt; RuP &gt; RuP2 石墨烯负载<br>在Liu对RuP的研究中发现，H原子更趋向于吸附到金属原子Ru上面去，故含Ru量高的具有较高的析氢反应性能。而其石墨烯基底通过掺杂P也能够提高HER性能。理论计算了G 实验合成了三种磷化物<br>在Schipper的研究中发现: H原子更趋向于吸附至Fe原子上，如Fe-Fe桥 3Fe空位 微分自由能对性能的阐述比以往研究中的自由能描述更具可靠性<br>HER的最优P占比的问题仍未解决<br>以往的研究认为过渡金属原子作为反应的中心，带负电荷的弱碱性P原子有助于捕获质子，促进氢气解吸。</li>
 </ol>
 <h3 id="Os的磷化物"><a href="#Os的磷化物" class="headerlink" title="Os的磷化物"></a>Os的磷化物</h3><p>选取了P4Os作为P-rich的磷化物，通过BFDH和表面能的计算，确定了最稳定面（0 1 0）并作了2X2扩胞。ML&#x3D;1&#x2F;16	<br>吸附位点：<br>P-Os Bridge site : ΔG&#x3D; -0.466 eV<br>P Top site ：ΔG&#x3D; -0.235 eV<br>P-P Hollow&#x2F;Bridge site : 优化时偏移至Top位  -0.236 eV<br>Os Top site ：计算中</p>
-<h3 id="Ta的磷化物"><a href="#Ta的磷化物" class="headerlink" title="Ta的磷化物"></a>Ta的磷化物</h3><p>选取P-rich的TaP3作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 0 1)并2X2超胞。ML&#x3D;1&#x2F;16<br>吸附位点：<br>P Top site 1  -0.270 eV<br>桥位偏移P Top site 2<br>过渡态搜寻Bridge site</p>
-<h3 id="TaP"><a href="#TaP" class="headerlink" title="TaP"></a>TaP</h3><p>ML &#x3D; 1&#x2F;8 TS DFT+D<br>P Top site -0.12 eV<br>M Top site -0.396 eV<br>P-P M-M Bridge site -0.914 eV</p>
+<h3 id="Ta的磷化物-TaP3"><a href="#Ta的磷化物-TaP3" class="headerlink" title="Ta的磷化物 TaP3"></a>Ta的磷化物 TaP3</h3><p>选取P-rich的TaP3作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 0 1)并2X2超胞。ML&#x3D;1&#x2F;16<br>吸附位点：<br>P Top site 1  -0.270 eV<br>桥位偏移P Top site 2<br>M top 0.231+0.24 eV<br>过渡态搜寻Bridge site<br>奇怪的是在缩胞后，所有吸附位点都偏移至P-top位 不管了 就算这个点位 以前的数据就用旧的，这个点位的自由能矫正用CASTEP算</p>
+<h3 id="TaP"><a href="#TaP" class="headerlink" title="TaP"></a>TaP</h3><p>ML &#x3D; 1&#x2F;8 TS DFT+D<br>M-terminated<br>P Top site -0.12 eV<br>M Top site -0.396 eV<br>P-P M-M Bridge site -0.914 eV<br>P-terminated</p>
+<h3 id="Ta2P"><a href="#Ta2P" class="headerlink" title="Ta2P"></a>Ta2P</h3><p>1 0 0为最稳定面 ML&#x3D;1&#x2F;18<br>梯度优化  1. 不加自旋 固定一层放开一层 2.加自旋 3. 全部放开</p>
 <p>在计算单点时，没考虑H自旋和slab自旋 计算H+slab时 固定了4层原子计算声子 和差分电荷密度 计算Slab时，通过VASPKIT给的2D K-Path 计算了能带和DOS</p>
-<h3 id="Hf的磷化物"><a href="#Hf的磷化物" class="headerlink" title="Hf的磷化物"></a>Hf的磷化物</h3><p>选取P-rich的HfP2作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 1 0） 作2X2超胞。 ML&#x3D;1&#x2F;16<br>没考虑自旋 没考虑DFT+D 尽管看来是负优化<br>P4 HolloW 偏移到 P-P Bridge site  ∆G&#x3D; 0.016 eV<br>P TOP site ∆G&#x3D; 0.051 eV<br>P-P Bridge site  ∆G&#x3D; 0.473 eV<br>P-P Bridge 2 site 偏移至 P Topsite ∆G&#x3D; -0.256 eV<br>能量不太对 建议加上H自旋重新算 DFT+U? +U用于计算性质上<br>如果你没有实验或者可靠的理论数据做支撑以检验+U方式的合理性，那就别加<br>单点时，H原子不考虑自旋 对能量影响可忽略</p>
-<p>DFT+D 选Grimme</p>
-<p>#电子性质分析<br>待解决<br>##DOS和PDOS<br>待解决<br>##差分电荷密度<br>待解决<br>##能带分析<br>待解决<br>##过渡态分析 of 基元反应 (Volmer Heyrovsky Tafel)<br>待解决</p>
-<p>酸性碱性HER都要考虑</p>
+<h3 id="Hf的磷化物"><a href="#Hf的磷化物" class="headerlink" title="Hf的磷化物"></a>Hf的磷化物</h3><p>选取P-rich的HfP2作为目标，通过BFDH和表面能的计算，确定了最稳定面（0 1 0） 作2X2超胞。 ML&#x3D;1&#x2F;16<br>没考虑自旋 没考虑DFT+D 尽管看来是负优化<br>P4 HolloW 偏移到 P-P Bridge site  ∆G&#x3D; 0.016 eV<br>P TOP site ∆G&#x3D; 0.051 eV<br>P-P Bridge site  ∆G&#x3D; 0.473 eV<br>P-P Bridge 2 site 偏移至 P Topsite ∆G&#x3D; -0.256 eV<br>能量不太对 建议加上H自旋重新算 DFT+U? +U用于计算性质上<br>如果你没有实验或者可靠的理论数据做支撑以检验+U方式的合理性，那就别加 +U比较有随意性 认可度不高<br>单点时，H原子不考虑自旋 对能量影响可忽略</p>
+<p>DFT+D 选Grimme 不行 高周期体系还是得 TS 2020的CASTEP的矫正是D2 而VASP是D3矫正 没有新版的2022建议还是用VASP进行计算s</p>
+<h1 id="电子性质分析"><a href="#电子性质分析" class="headerlink" title="电子性质分析"></a>电子性质分析</h1><p>待解决</p>
+<h2 id="DOS和PDOS"><a href="#DOS和PDOS" class="headerlink" title="DOS和PDOS"></a>DOS和PDOS</h2><p>待解决</p>
+<h2 id="差分电荷密度"><a href="#差分电荷密度" class="headerlink" title="差分电荷密度"></a>差分电荷密度</h2><p>待解决</p>
+<h2 id="能带分析"><a href="#能带分析" class="headerlink" title="能带分析"></a>能带分析</h2><p>待解决</p>
+<h2 id="过渡态分析-of-基元反应-Volmer-Heyrovsky-Tafel"><a href="#过渡态分析-of-基元反应-Volmer-Heyrovsky-Tafel" class="headerlink" title="过渡态分析 of 基元反应 (Volmer Heyrovsky Tafel)"></a>过渡态分析 of 基元反应 (Volmer Heyrovsky Tafel)</h2><p>待解决<br>键长分析<br>酸性碱性HER都要考虑</p>
+<h3 id="CI-NEB技巧"><a href="#CI-NEB技巧" class="headerlink" title="CI-NEB技巧"></a>CI-NEB技巧</h3><p>最近在搜索过渡态时一直苦于CI-NEB方法速度缓慢，成功率也比较低。之后也尝试了NEB+dimer，虽然一定程度上提高了过渡态搜索的成功率，但是仍然不尽人意。之后突发奇想，想到了一个易学易用的方法，并且用该方法尝试搜索了十几个过渡态之后感觉搜索过渡态的成功率和速度有明显的提升，在此分享给大家。<br>该方法主要是将dimer与dmol3联用。<br>第一步，先用VASP优化出初态与末态的结构，就如使用CI-NEB时一样。</p>
+<p>第二步，基于第一步得到的初态与末态结构使用dmol3的TS search找出一个过渡态结构，110个原子左右的体系，80个核计算大概耗时4个小时。</p>
+<p>第三步，使用dmol3找到的过渡态作为初猜计算频率之后制作MODECAR去跑dimer，得到最终的过渡态，dimer方法坛内已有大佬详细分享过了，在此不多做赘述。大概需要100个离子步左右即可收敛到0.03电子伏每埃。</p>
+<p>以上，如有错误请各位老师同学不吝赐教。</p>
+<h3 id="自旋"><a href="#自旋" class="headerlink" title="自旋"></a>自旋</h3><p>有无磁性可以先自行google。诸如一搜In2O3 In2S3 magnetic就有答案<br>怎么考虑看具体程序</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>由于无实验参考 该体系可作为未完成的第三体系处理。</p>
-<h1 id="11月13日-总结"><a href="#11月13日-总结" class="headerlink" title="11月13日 总结"></a>11月13日 总结</h1><ol>
+<h3 id="11月13日-总结"><a href="#11月13日-总结" class="headerlink" title="11月13日 总结"></a>11月13日 总结</h3><ol>
 <li><p>TMPs的预测的科学性问题举棋不定，TaS2的研究是否可以拓展衍生至其的磷化物？ 甚至拓展至从未研究过的第五周期金属。<br>可以</p>
 </li>
 <li><p>alloy的体系还是需要同步做，需要进行缩胞操作。<br>缩胞可以进行，但是会丧失其对称性，以及不能保持其原子计量比。<br>最好的方法还是重新进行掺杂</p>
@@ -228,10 +237,10 @@
 <ol start="4">
 <li><p>d-band center 与吸附能的相关性还未确定 要看数据</p>
 </li>
-<li><p>通过CASTEP 搜寻过渡态 以找寻偏移前的活性位点 计算中。</p>
+<li><p>通过CASTEP 搜寻过渡态 以找寻偏移前的活性位点 计算中。<br>没找到 TS 能量没有极大值 初始构型就是极大值 TaP3 Bridge site<br>活性位点偏移？ 试试加DFT+D</p>
 </li>
 </ol>
-<h1 id="11月14日-15日-总结"><a href="#11月14日-15日-总结" class="headerlink" title="11月14日&#x2F;15日 总结"></a>11月14日&#x2F;15日 总结</h1><ol>
+<h3 id="11月14日-15日-总结"><a href="#11月14日-15日-总结" class="headerlink" title="11月14日&#x2F;15日 总结"></a>11月14日&#x2F;15日 总结</h3><ol>
 <li><p>覆盖率在研究前的重要性？</p>
 </li>
 <li><p>比较RuCo等比掺杂不同构型的能量、对TaP进行几何优化 下步对其吸附构型进行猜测<br> 越混乱的越稳定</p>
@@ -242,27 +251,74 @@
 </li>
 <li><p>HER碱性计算的学习<br> 碱性条件下，析氢反应的活性: 水解离能，Adsorption Energy of OH* &amp; H* d-band center目前还未有系统性的碱性HER理论<br> 碱性HER反应速率比酸性下要慢2-3个数量级 表观反应速率的差异很大程度上是由于反应中间体热力学状态和反应的反应势垒的不同所致 动力学研究滞后<br>H的两种吸附类型 潜在沉积氢 Hupd E&#x3D;0.05-0.35 eV<br>         过电位沉积氢Hopd E &lt; 0 eV</p>
 </li>
+</ol>
+<p>水解离能怎么算？ 与H吸附的区别</p>
+<ol start="6">
 <li><p>COHP 计算？</p>
 </li>
 <li><p>不同切面的层厚度和表面原子个数不同，找寻同一方法。</p>
 </li>
 </ol>
-<h1 id="11月17日"><a href="#11月17日" class="headerlink" title="11月17日"></a>11月17日</h1><ol>
+<h3 id="11月17日"><a href="#11月17日" class="headerlink" title="11月17日"></a>11月17日</h3><ol>
 <li><p>CASTEP声子频率计算  GET<br>ZPE都按CASTEP计算的来</p>
 </li>
 <li><p>非晶态建模 GET</p>
 </li>
 <li><p>alkaline 建模</p>
 </li>
-<li><p>对Pt 111 进行 RPBE计算  加上自旋 不加水层 不考虑DFT+D 算出来的值为 -0.04 eV<br>DFT+D 后能量偏大 ?可能是没超胞 超胞试一试<br> CASTEP 是D2矫正 对 56号后的原子效果不好</p>
+<li><p>对Pt 111 进行 RPBE计算  加上自旋 不加水层 不考虑DFT+D 算出来的值为 -0.04 eV<br>DFT+D 后能量偏大 ?可能是没超胞 超胞试一试 依旧不行<br> CASTEP 是Grimme D2矫正 对 56号后的原子效果不好 </p>
 </li>
 <li><p>碱性酸性HER 基元反应的计算能量的公式</p>
 </li>
 <li><p>微分吸附热 ？</p>
 </li>
 </ol>
-<h1 id="11月18日"><a href="#11月18日" class="headerlink" title="11月18日"></a>11月18日</h1><ol>
-<li>vasp 虚频问题</li>
+<h3 id="11月18日"><a href="#11月18日" class="headerlink" title="11月18日"></a>11月18日</h3><ol>
+<li><p>vasp 虚频问题</p>
+</li>
+<li><p>过渡态搜寻能找到高能吸附位点吗？ 找过渡态的意义<br>意义：能找到反应的实际活化能垒<br>能找到，但如果该吸附位点的势能不为谷点时，很容易在优化时产生偏移，只能采用固定原子然后算能量</p>
+</li>
+</ol>
+<h3 id="11月20日"><a href="#11月20日" class="headerlink" title="11月20日"></a>11月20日</h3><p>对TaP 004 面的 M-terminated P-terminated 点位进行活性位点的研究 找到最佳活性位点后 研究覆盖率的影响 研究能垒？ 要不就不算碱性的 计算量大<br>做一系列的 Ta的磷化物 比较趋势 再横向比较 HfP POs的活性 看最后计算量 篇幅不够再对活性最好的进行碱性HER的研究<br>做个空位试试?  可以一试<br>过渡态用DMOL3做 学习一下怎么做 初末构型很重要<br>DFT+U就别加了 问起来再说<br>自旋 测个没吸附的单点看看差异 差了0.几 得考虑进去</p>
+<p>why not used GGA-RPBE<br>自旋极化和DFT+U可直接在已有基础上继续优化  </p>
+<h3 id="11月27日"><a href="#11月27日" class="headerlink" title="11月27日"></a>11月27日</h3><ol>
+<li><p>研究基元反应时，可以在高覆盖率下进行研究预吸附的H原子对吸附的影响。<br>在2018 New sight 文献中，不同terminated面，预吸附原子对活化能垒的影响不同。</p>
+</li>
+<li><p>DFT+U<br>计算与总能量相关的性质时不用考虑，计算与单电子相关的性质时应该考虑<br>可以采用孙成华的文献库值</p>
+</li>
+<li><p>过渡态能垒（能垒大小看解离能力）和前后反应总能垒（能量差值看过程吸热还是放热判断自发）都能用来说明情况<br>决速步看活化能垒 能垒高的基元反应就是决速步 碱中性HER中，由于质子稀少，会导致Tafel反应能垒远小于Heyrovsky反应能垒，少一段水解离能</p>
+</li>
+<li><p>从分子间作用力和电荷密度分析吸附能垒情况</p>
+</li>
+<li><p>在后续加U 加自旋 扩胞 缩胞重新计算时只需要挑最优构型进行</p>
+</li>
+<li><p>2018 new sight 由于存在两个terminated层 该文采用制造缺陷空位来让两个terminal层同时暴露，协同参与表面调控， 很好的思路 （混合催化剂表面策略）</p>
+</li>
+<li><p>OH* 会和 H* 抢占活性位点 注意说明<br>因此 OH*的解析能垒可能也会成为中碱性HER的活性描述符  可以加入一些化学物质对吸附态OH进行中和以增加反应速率 不就是加酸吗？</p>
+</li>
+<li><p>掺杂已广泛应用于材料的物理和化学性质的调整。以往的研究也表明，过渡金属和非金属掺杂是改变催化剂化学活性和了解催化剂基本性质的有效途径<br>例如：用N、S对P原子进行掺杂 用其他金属对Ta进行掺杂 掺杂后的结构稳定性也得考察</p>
+</li>
+</ol>
+<h3 id="11月28日"><a href="#11月28日" class="headerlink" title="11月28日"></a>11月28日</h3><ol>
+<li><p>计算太耗时 同时考虑自旋和D2矫正<br>梯度优化考虑 Medium 精度 不自旋 考虑D2矫正 Step1 + gamma点(当slab尺寸大时可以 若不大时可能会导致表面原子大幅度偏移 此时需要固定所有slab层进行粗优化) 或低密度点<br>Fine 精度 不考虑自旋 D2 Step2 +正常K点<br>Step3 都考虑计算</p>
+</li>
+<li><p>待bulk计算完毕 取最优 再算覆盖率 对最好的一个磷化物进行基元反应的研究</p>
+</li>
+</ol>
+<h3 id="12月4日"><a href="#12月4日" class="headerlink" title="12月4日"></a>12月4日</h3><ol>
+<li>大部分纯理论计算文章都是采用CI-NEB方法进行过渡态搜寻，CASTEP和DMol3的QST搜寻方法感觉没那么好用？<br>可以找到最优的模型后，改用VASP计算后续的性质 过渡态 频率分析等等。最好还是研究出一套方法</li>
+</ol>
+<h3 id="12月5日"><a href="#12月5日" class="headerlink" title="12月5日"></a>12月5日</h3><ol>
+<li><p>粗算的复合材料后面可以优化cell 时间是否够用？</p>
+</li>
+<li><p>SIS调整 ： 将SIO2非晶层调薄 密度不变， 先算着单层sio2对水滴的疏水性 如果效果好 数据优，就可以把造好的新模型跑一遍短时NPT直接用</p>
+</li>
+</ol>
+<h3 id="12月7日"><a href="#12月7日" class="headerlink" title="12月7日"></a>12月7日</h3><ol>
+<li><p>DOS分解 区分原子 和细分d轨道 如何做到 会了<br>学习详细分析DOS</p>
+</li>
+<li><p>vaspkit 性质后处理0</p>
+</li>
 </ol>
 
     </div>
